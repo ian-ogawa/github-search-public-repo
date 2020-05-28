@@ -17,6 +17,24 @@ This is a simple web app to display public repositories from github based on sea
 
 ## Configuration
 
+clone the repo
+
+```
+git clone git@github.com:ian-ogawa/github-search-public-repo.git
+```
+
+install gem
+
+```
+bundle install
+```
+
+start rails server
+
+```
+rails s
+```
+
 ## Testing
 
 execute code below to run the unit testing.
