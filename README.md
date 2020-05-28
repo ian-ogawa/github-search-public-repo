@@ -48,6 +48,6 @@ Here is the example of the result of the unit testing.
 ```
 ..............................................
 
-Finished in 3 seconds (files took 2.89 seconds to load)
-11 examples, 0 failures
+Finished in 3.74 seconds (files took 2.69 seconds to load)
+15 examples, 0 failures
 ```
