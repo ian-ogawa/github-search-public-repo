@@ -1,0 +1,15 @@
+<% content['items'].each do |data| %>
+	<%= link_to data['html_url'] do %>
+		<div class="card">
+		  <div class="card-body">
+		  	<p class="mb-0"><%= data['full_name'] %></p>
+		  	<p class="mb-0"><%= data['description'].nil? ? '-' : "#{data['description'][0..100]}..." %></p>
+		  	<p class="mb-0">language <%= data['language'].blank? ? '-' : data['language'] %></p>
+		  	<p class="mb-0">
+		  		<%= fa_icon "star" %><%= data['stargazers_count'] %>
+		  		<%= format_time(data['updated_at']) %>
+		  	</p>
+		  </div>
+		</div>
+	<% end %>
+<% end %>

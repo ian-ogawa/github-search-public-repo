@@ -1,0 +1,14 @@
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center pt-5">
+    <li class="page-item">
+      <%= link_to 'First', search_url(q: params[:q], sort: params[:sort], order: params[:order], page: 1), class: 'page-link' %>
+    </li>
+    <% (paginate[:min]..paginate[:max]).each_with_index do |page| %>
+      <li class="page-item"><%= link_to page, search_url(q: params[:q], sort: params[:sort], order: params[:order], page: page), class: 'page-link' %></li>
+    <% end %>
+
+    <li class="page-item">
+      <%= link_to 'Last', search_url(q: params[:q], sort: params[:sort], order: params[:order], page: paginate[:last]), class: 'page-link' %>
+    </li>
+  </ul>
+</nav>

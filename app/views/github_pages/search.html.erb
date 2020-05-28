@@ -1,0 +1,23 @@
+<div class="text-center">
+	<%= render 'search_form' %>
+</div>
+
+<div class="search_content pt-5">
+	<p class="font-weight-bold">
+		<%= @response[:code] == 200 ? @response[:content]['total_count'] : '0' %> Repository Results
+	</p>
+
+	<div class="repo_list">
+		<% if @response[:code] == 200 %>
+			<%= render partial: 'content', locals: { content: @response[:content] } %>
+		<% else %>
+			<div class="alert alert-secondary" role="alert">
+			  Something went wrong, please try again later
+			</div>
+		<% end %>
+	</div>
+
+	<% if @response[:pagination].present? %>
+		<%= render partial: 'pagination', locals: { paginate: @response[:pagination] } %>
+	<% end %>
+</div>

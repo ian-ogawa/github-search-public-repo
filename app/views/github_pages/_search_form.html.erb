@@ -1,0 +1,8 @@
+<div class="content">
+	<%= form_tag(search_url, method: :get) do %>
+	  Search <%= text_field_tag :q, params[:q], required: true %>
+	  Sort by <%= select_tag "sort", options_for_select(get_sort_list, "best-match") %>
+	  Order <%= select_tag "order", options_for_select(['asc', 'desc'], "asc") %>
+	  <%= submit_tag 'Search' %>
+	<% end %>
+</div>
