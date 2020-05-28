@@ -10,8 +10,6 @@ module GithubPagesHelper
 	def min_page(pagination)
 		min = pagination[:current].to_i % 5 == 0 && pagination[:current].present? ? pagination[:current].to_i - 1 : pagination[:current].to_i
 		group_number = (min / 5) * 5 + 1
-
-		# return pagination[:current].to_i % 5 == 0 && pagination[:current].present? ? group_number - 2 : group_number + 1
 	end
 
 	def max_page(min)
